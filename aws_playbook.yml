@@ -1,0 +1,8 @@
+
+
+- name: start an instance
+  hosts: localhost
+  become: yes  # Run tasks with sudo
+  roles:
+    aws_Ec2
+
