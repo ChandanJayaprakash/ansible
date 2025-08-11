@@ -8,8 +8,8 @@
     instance_type: t2.micro
     security_group: default
     region: ap-south-1
-    aws_access_key: "{{aws_access_key}}"
-    aws_secret_key: "{{aws_secret_key}}"
+    aws_access_key: "{{/home/ec2-user/aws_access_key}}"
+    aws_secret_key: "{{/home/ec2-user/aws_secret_key}}"
     
     network_interfaces:
       - assign_public_ip: true
