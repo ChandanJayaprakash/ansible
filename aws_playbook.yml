@@ -1,22 +1,25 @@
---- 
-- hosts: localhost
+---
+- name: start an instance
+  hosts: localhost
   connection: local
+
   vars_files:
-   - pass.yml
-    
+    - pass.yml
+
+  become: yes  # Run tasks with sudo
   tasks:
-    - name: start an instance with a public IP address
-      amazon.aws.ec2_instance:
-        name: "ansible-instance"
-        # key_name: "prod-ssh-key"
-        # vpc_subnet_id: subnet-013744e41e8088axx
-        instance_type: t2.micro
-        security_group: default
-        region: ap-south-1
-        aws_access_key: "{{ec2_access_key}}"  # From vault as defined
-        aws_secret_key: "{{ec2_secret_key}}"  # From vault as defined      
-        network:
-          assign_public_ip: true
-        image_id: ami-0f918f7e67a3323f0
-        tags:
-          Environment: Testing
+  - name: start an instance with a public IP address
+    amazon.aws.ec2_instance:
+      name: "ansible-instance"
+      # key_name: "prod-ssh-key"
+      # vpc_subnet_id: subnet-013744e41e8088axx
+      instance_type: t2.micro
+      security_group: default
+      region: ap-south-1
+      aws_access_key: "{{ec2_access_key}}"  # From vault as defined
+      aws_secret_key: "{{ec2_secret_key}}"  # From vault as defined
+      network:
+        assign_public_ip: true
+      image_id: ami-0f918f7e67a3323f0
+      tags:
+        Environment: Testing
