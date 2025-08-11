@@ -1,8 +1,6 @@
-
----
-- name: start an instance
-  hosts: localhost
-  become: yes  # Run tasks with sudo
+--- 
+- hosts: localhost
+  connection: local
   tasks:
   - name: start an instance with a public IP address
     amazon.aws.ec2_instance:
@@ -19,4 +17,3 @@
       image_id: ami-04b70fa74e45c3917
       tags:
         Environment: Testing
- 
