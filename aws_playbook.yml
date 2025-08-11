@@ -4,5 +4,5 @@
   hosts: localhost
   become: yes  # Run tasks with sudo
   roles:
-    aws_Ec2
+    - aws_Ec2
 
