@@ -1,5 +1,7 @@
 ---
 # tasks file for aws_Ec2
+- vars_files:
+    - pass.yml
 - name: start an instance with a public IP address
   amazon.aws.ec2_instance:
     name: "public-compute-instance_ansible"
@@ -8,8 +10,8 @@
     instance_type: t2.micro
     security_group: default
     region: ap-south-1
-    aws_access_key: "{{aws_access_key}}"
-    aws_secret_key: "{{aws_secret_key}}"
+    aws_access_key: "{{ec2_access_key}}"
+    aws_secret_key: "{{ec2_secret_key}}"
     
     network_interfaces:
       - assign_public_ip: true
