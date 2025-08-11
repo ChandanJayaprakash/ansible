@@ -1,2 +1,4 @@
 ---
 # vars file for aws_Ec2
+vars_files:
+    - pass.yml
