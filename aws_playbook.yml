@@ -23,6 +23,6 @@
         tags:
           Environment: "{{ item.name }}"
       loop:
-        - {{image: "ami-0f918f7e67a3323f0", name: "node-1"}}
-        - {{image: "ami-0f918f7e67a3323f0", name: "node-2"}}
-        - {{image: "ami-0144277607031eca2", name: "node-3"}}
+        - { image: "ami-0f918f7e67a3323f0", name: "node-1" }
+        - { image: "ami-0f918f7e67a3323f0", name: "node-2" }
+        - { image: "ami-0144277607031eca2", name: "node-3" }
