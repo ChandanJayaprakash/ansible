@@ -1,0 +1,13 @@
+---
+- name: start an instance
+  hosts: localhost
+  connection: local
+
+  vars_files:
+    - pass.yml
+
+  become: yes  # Run tasks with sudo
+  roles:
+    - aws_Ec2
+  
+~                            
