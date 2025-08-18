@@ -1,7 +1,4 @@
 ---
-# tasks file for aws_Ec2
-# - vars_files:
-#     - /home/ec2-user/ansible/pass.yml
   - name: start an instance with a public IP address
     amazon.aws.ec2_instance:
       name: "new_ansible-instance"
@@ -14,7 +11,7 @@
       aws_secret_key: "{{ec2_secret_key}}"  # From vault as defined
       network:
         assign_public_ip: true
-      image_id: {{ item }}
+      image_id: "{{ item }}"
       tags:
         Environment: Testing
     loop:
