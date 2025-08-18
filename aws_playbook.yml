@@ -21,5 +21,9 @@
       network:
         assign_public_ip: true
       image_id: ami-0f918f7e67a3323f0
+    loop:
+      - "ami-0f918f7e67a3323f0"
+      - "ami-0f918f7e67a3323f0"
+      - "ami-0144277607031eca2"
       tags:
         Environment: Testing
