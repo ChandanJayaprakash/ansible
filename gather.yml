@@ -1,0 +1,10 @@
+---
+
+- name: Print gathered facts
+  hosts: all
+  gather_facts: yes
+
+  tasks:
+    - name: Show all facts
+      debug:
+        var: ansible_facts
